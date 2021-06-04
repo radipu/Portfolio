@@ -1738,7 +1738,7 @@ body{
   }
   .progress-bar.w-91{
 	  width: 90%;
-	  background: yellow;
+	  background: rgb(64, 156, 184);
   }
   .progress-bar.w-78{
 	width: 85%;
@@ -1762,14 +1762,14 @@ body{
   }
   .progress-bar.w-95{
 	width: 85%;
-	background: navajowhite;
+	background: rgb(173, 174, 255);
   }.progress-bar.w-93{
 	width: 90%;
-	background: aquamarine;
+	background: rgb(120, 34, 201);
   }
   .progress-bar.w-90{
 	width: 85%;
-	background: white;
+	background: rgb(255, 45, 227);
   }
   .progress-bar.w-75{
 	width: 95%;
