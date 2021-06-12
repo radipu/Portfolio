@@ -1744,6 +1744,9 @@ body{
 	width: 85%;
 	background: orange;
   }
+.progress-bar .w-79{
+	  width: 85%;
+  }
   .progress-bar.w-88{
 	  width: 88%;
 	  background: red;
