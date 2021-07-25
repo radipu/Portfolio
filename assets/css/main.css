@@ -1744,12 +1744,28 @@ body{
 	width: 85%;
 	background: orange;
   }
+.progress-bar.w-40{
+	width: 90%;
+	background: rgb(112, 110, 255);
+  }
+  .progress-bar.w-41{
+	width: 60%;
+	background: rgb(80, 104, 99);
+  }
+  .progress-bar.w-42{
+	width: 82%;
+	background: rgb(149, 4, 179);
+  }
 .progress-bar .w-79{
 	  width: 85%;
   }
   .progress-bar.w-88{
 	  width: 88%;
 	  background: red;
+  }
+.progress-bar.w-43{
+	width: 95%;
+	background: rgb(253, 162, 226);
   }
   .progress-bar.w-98{
 	width: 90%;
