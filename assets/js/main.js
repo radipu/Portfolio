@@ -208,7 +208,7 @@
 				// Add state?
 					if (typeof addState != 'undefined'
 					&&	addState === true)
-						history.pushState(null, null, '#');
+						window.history.pushState("", document.title, window.location.pathname);
 
 				// Handle lock.
 
