@@ -416,6 +416,18 @@
     		this.classList.toggle("active");
   			});
 		}
+		//collapse
+		var coll = document.getElementsByClassName("collapsiblework");
+		var i;
+
+		for (i = 0; i < coll.length; i++) {
+  			coll[i].addEventListener("click", function() {
+			for(j = 0; j < coll.length; j++){
+				coll[j].classList.remove("active");
+			}
+    		this.classList.toggle("active");
+  			});
+		}
 
 //automated slideshow every 2 seconds
 		var slideIndex = 0;
