@@ -410,23 +410,26 @@
 
 		for (i = 0; i < coll.length; i++) {
   			coll[i].addEventListener("click", function() {
-			for(j = 0; j < coll.length; j++){
-				coll[j].classList.remove("active");
-			}
-    		this.classList.toggle("active");
+				for(j = 0; j < coll.length; j++){
+					coll[j].classList.remove("active");
+				}
+				this.classList.toggle("active");
   			});
 		}
-		//collapse
-		var coll = document.getElementsByClassName("collapsiblework");
+		//collapse software button inside
+		var colexp = document.getElementsByClassName("collapsiblework");
 		var i;
 
-		for (i = 0; i < coll.length; i++) {
-  			coll[i].addEventListener("click", function() {
-			for(j = 0; j < coll.length; j++){
-				coll[j].classList.remove("active");
+		for (i = 0; i < colexp.length; i++) {
+			colexp[i].addEventListener("click", function() {
+			this.classList.toggle("active");
+			var content = this.nextElementSibling;
+			if (content.style.display === "block") {
+			content.style.display = "none";
+			} else {
+			content.style.display = "block";
 			}
-    		this.classList.toggle("active");
-  			});
+		});
 		}
 
 //automated slideshow every 2 seconds
