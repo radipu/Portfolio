@@ -404,33 +404,52 @@
 			}
 		  }
 		
-		//collapse
-		var coll = document.getElementsByClassName("collapsible");
-		var i;
+		// Collapsible buttons
+var coll = document.getElementsByClassName("collapsible");
+var activeCollapsible = null;
 
-		for (i = 0; i < coll.length; i++) {
-  			coll[i].addEventListener("click", function() {
-				for(j = 0; j < coll.length; j++){
-					coll[j].classList.remove("active");
-				}
-				this.classList.toggle("active");
-  			});
-		}
-		//collapse software button inside
-		var colexp = document.getElementsByClassName("collapsiblework");
-		var i;
+for (var i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    if (activeCollapsible !== null && activeCollapsible !== this) {
+      activeCollapsible.classList.remove("active");
+      activeCollapsible.nextElementSibling.style.display = "none";
+    }
+    
+    activeCollapsible = (activeCollapsible === this) ? null : this;
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    content.style.display = (content.style.display === "block") ? "none" : "block";
+  });
+}
 
-		for (i = 0; i < colexp.length; i++) {
-			colexp[i].addEventListener("click", function() {
-			this.classList.toggle("active");
-			var content = this.nextElementSibling;
-			if (content.style.display === "block") {
-			content.style.display = "none";
-			} else {
-			content.style.display = "block";
-			}
-		});
-		}
+// Collapsiblework buttons
+var colexp = document.getElementsByClassName("collapsiblework");
+
+for (var i = 0; i < colexp.length; i++) {
+    colexp[i].addEventListener("click", function() {
+        var content = this.nextElementSibling;
+
+        if (content.style.display === "block") {
+            content.style.display = "none";
+        } else {
+            // Collapse other expanded sections
+            for (var j = 0; j < colexp.length; j++) {
+                if (colexp[j] !== this && colexp[j].classList.contains("active")) {
+                    colexp[j].classList.remove("active");
+                    colexp[j].nextElementSibling.style.display = "none";
+                }
+            }
+
+            // Expand the clicked section
+            this.classList.add("active");
+            content.style.display = "block";
+            
+            // Scroll the expanded section into view
+            this.parentElement.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+    });
+}
+
 
 //automated slideshow every 2 seconds
 		var slideIndex = 0;
@@ -451,7 +470,5 @@
   		slides[slideIndex-1].style.display = "block";  
   		dots[slideIndex-1].className += " active";
   		setTimeout(showSlides, 5000); // Change image every 2 seconds
-	}
-		
-
-})(jQuery);
+		}
+	})(jQuery);

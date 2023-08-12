@@ -1930,3 +1930,13 @@ img {vertical-align: middle;}
 @media only screen and (max-width: 300px) {
   .prev, .next,.text {font-size: 11px}
 }
+
+.subset {
+    margin-left: 20px; /* Adjust this value as needed */
+	margin-bottom: 20px;
+}
+
+.work-details {
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
